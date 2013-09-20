@@ -6,8 +6,6 @@ using std::cout;
 using std::endl;
 using std::cin;
 using std::string;
-//typedef std::string< char > string;
-//string input;
 
 Controller::Controller()
 {
