@@ -1,4 +1,4 @@
-#include "Parser.h";
+﻿#include "Parser.h";
 #include <iostream>
 using std::cout;
 using std::endl;
@@ -8,7 +8,7 @@ Parser::Parser()
 
 }
 
-void Parser::parse()
+void Parser::parse(string input)
 {
-
+    cout << "Парсим строку: " << input << endl;
 }
