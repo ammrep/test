@@ -1,4 +1,4 @@
-#include "Echo.h";
+п»ї#include "Echo.h";
 #include <iostream>
 using std::cout;
 using std::endl;
@@ -10,5 +10,5 @@ Echo::Echo()
 
 void Echo::run()
 {
-	cout << "Запущено приложение Echo" << endl;
+	cout << "Р—Р°РїСѓС‰РµРЅРѕ РїСЂРёР»РѕР¶РµРЅРёРµ Echo" << endl;
 }

@@ -1,4 +1,4 @@
-#include "Controller.h"
+п»ї#include "Controller.h"
 #include "Parser.h"
 #include <iostream>
 #include <string>
@@ -9,24 +9,24 @@ using std::string;
 
 Controller::Controller()
 {
-	cout << "Создан экземпляр контроллера" << endl;
+	cout << "РЎРѕР·РґР°РЅ СЌРєР·РµРјРїР»СЏСЂ РєРѕРЅС‚СЂРѕР»Р»РµСЂР°" << endl;
 }
 
 Controller::~Controller()
 {
-	cout << "Удалён экземпляр контроллера" << endl;
+	cout << "РЈРґР°Р»С‘РЅ СЌРєР·РµРјРїР»СЏСЂ РєРѕРЅС‚СЂРѕР»Р»РµСЂР°" << endl;
 }
 
 void Controller::run()
 {
 	string input;
-	cout << "Запущено приложение Shell" << endl;
+	cout << "Р—Р°РїСѓС‰РµРЅРѕ РїСЂРёР»РѕР¶РµРЅРёРµ Shell" << endl;
 	Parser pars;
-	input = "";    // начальное значение
+	input = "";    // РЅР°С‡Р°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ
 	while (input != "exit")
 	{
 		cin >> input;
-		pars.parse(input);    // парсим строчку
+		pars.parse(input);    // РїР°СЂСЃРёРј СЃС‚СЂРѕС‡РєСѓ
 	}
 }
 

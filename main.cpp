@@ -7,7 +7,7 @@ using std::endl;
 int main()
 {
 	setlocale(LC_ALL,"russian");
-	setlocale(LC_ALL,"utf-8"); 
+	//setlocale(LC_ALL,"utf-8"); 
 
 	Controller contr;
 	contr.run();
