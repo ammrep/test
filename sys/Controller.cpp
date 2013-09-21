@@ -22,7 +22,7 @@ void Controller::run()
 	string input;
 	cout << "«апущено приложение Shell" << endl;
 	Parser pars;
-	cin >> input;
+	input = "";    // начальное значение
 	while (input != "exit")
 	{
 		cin >> input;
