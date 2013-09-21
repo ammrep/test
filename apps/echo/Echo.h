@@ -2,7 +2,8 @@
 * Класс Echo - основной класс приложения Echo - реализация интерфейса
 * IApp
 */
-class Echo {
+#include "../../sys/IApp.h";    //подключаем интерфейс
+class Echo : public IApp {
 
 public:
 
