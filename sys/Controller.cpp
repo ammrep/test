@@ -21,8 +21,12 @@ void Controller::run()
 {
 	string input;
 	cout << "Запущено приложение Shell" << endl;
-	cin >> input;
 	Parser pars;
-	pars.parse(input);    // парсим строчку
+	cin >> input;
+	while (input != "exit")
+	{
+		cin >> input;
+		pars.parse(input);    // парсим строчку
+	}
 }
 

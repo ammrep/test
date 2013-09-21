@@ -13,5 +13,4 @@ Parser();
 
 void parse(string);
 
-
 };
