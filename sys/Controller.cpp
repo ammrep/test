@@ -25,7 +25,8 @@ void Controller::run()
 	input = "";    // начальное значение
 	while (input != "exit")
 	{
-		cin >> input;
+		//cin >> input;
+		getline(cin,input);
 		pars.parse(input);    // парсим строчку
 	}
 }
