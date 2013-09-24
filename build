@@ -1,0 +1,2 @@
+mkdir -p obj
+make --directory=./obj/ --makefile=../makefile program_name=../shell
