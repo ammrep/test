@@ -4,6 +4,6 @@ using std::runtime_error;
 class AppErrorException : public runtime_error
 {
 public:
-	AppErrorException::AppErrorException()
-		: runtime_error("Ошибка приложения ") {}
+	AppErrorException()
+		: runtime_error("РћС€РёР±РєР° РїСЂРёР»РѕР¶РµРЅРёСЏ ") {}
 };
