@@ -2,7 +2,7 @@
 using std::cout;
 using std::endl;
 #include "sys/Controller.h"
-#include "exceptions/AppErrorException.h"
+#include "sys/AppErrorException.h"
 
 
 int main()
