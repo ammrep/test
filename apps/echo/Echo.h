@@ -3,15 +3,15 @@
 * IApp
 */
 #include "../../sys/IApp.h"    //подключаем интерфейс
-class Echo : public IApp {
 
+class Echo : public IApp 
+{
 public:
+	Echo();
 
-Echo();
-
-/**
-* Функция run() запускает приложение Echo
-*/
-void run();
+	/**
+	* Функция run() запускает приложение Echo
+	*/
+	void run();
 
 };
