@@ -6,21 +6,15 @@
 * класс вызывает все остальные классы, и нужно постараться, чтобы
 * все связи происходили через него
 */
-#include <iostream>
-using std::cout;
-using std::endl;
 
-class Controller {
-
+class Controller 
+{
 public:
+	Controller();
+	~Controller();
 
-Controller();
-~Controller();
-
-/**
-* Функция run() запускает shell
-*/
-void run();
-
-
+	/**
+	* Функция run() запускает shell
+	*/
+	void run();
 };

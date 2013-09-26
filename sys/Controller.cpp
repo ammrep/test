@@ -1,11 +1,13 @@
-﻿#include "Controller.h"
-#include "Parser.h"
-#include <iostream>
-#include <string>
+﻿#include <iostream>
 using std::cout;
 using std::endl;
 using std::cin;
+
+#include <string>
 using std::string;
+
+#include "Controller.h"
+#include "Parser.h"
 
 Controller::Controller()
 {

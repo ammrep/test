@@ -1,7 +1,8 @@
-﻿#include "Echo.h"
-#include <iostream>
+﻿#include <iostream>
 using std::cout;
 using std::endl;
+
+#include "Echo.h"
 
 Echo::Echo()
 { 

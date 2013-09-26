@@ -1,14 +1,18 @@
-﻿#include "TData.cpp"
-#include "Parser.h"
-#include "../apps/echo/Echo.h"
-#include "../exceptions/AppErrorException.h"
-#include <iostream>
-#include <vector>
-#include <sstream>
-using std::vector;
+﻿#include <iostream>
 using std::cout;
 using std::endl;
+
+#include <vector>
+using std::vector;
+
+#include <sstream>
 using std::string;
+using std::istringstream;
+
+#include "Parser.h"
+#include "../apps/echo/Echo.h"
+#include "AppErrorException.h"
+#include "TData.cpp"
 
 Parser::Parser()
 {
@@ -21,7 +25,7 @@ void Parser::parse(string input)
 
     TData d;
 
-    std::istringstream ist(input);
+    istringstream ist(input);
     string tmp;
     while ( ist >> tmp )
 	{
