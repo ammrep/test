@@ -30,7 +30,7 @@ void Parser::parse(string input)
 		Echo echo;
 		echo.run();
 	}
-	else if (command.at(0).str. != "exit")
+	else if (command.at(0).str != "exit")
 		cout << "Команда не найдена!" << endl;
 }
 

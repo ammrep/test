@@ -7,6 +7,9 @@
 #include <string>
 using std::string;
 
+#include <vector>
+using std::vector;
+
 #include "TData.cpp"
 
 class Parser {
@@ -20,5 +23,5 @@ public:
 	*/
 	void parse(string);
 private:
-	vector<TData> getTokens(string);
+	vector <TData> getTokens(string);
 };
