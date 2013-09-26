@@ -1,6 +1,6 @@
-﻿#include "Parser.h";
-#include "../apps/echo/Echo.h";
-#include "../exceptions/AppErrorException.h";
+﻿#include "Parser.h"
+#include "../apps/echo/Echo.h"
+#include "../exceptions/AppErrorException.h"
 #include <iostream>
 #include <vector>
 #include <sstream>
