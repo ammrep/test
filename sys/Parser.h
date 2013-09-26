@@ -21,7 +21,7 @@ public:
 	* Функция, которая принимает строку команды и возвращает вектор с данными(проблема с 
 	* возвратом вектора) 
 	*/
-	void parse(string);
+	vector<TData> parse(string);
 private:
-	vector <TData> getTokens(string);
+	vector<TData> getTokens(string);
 };

@@ -6,8 +6,13 @@ using std::cin;
 #include <string>
 using std::string;
 
+#include <vector>
+using std::vector;
+
 #include "Controller.h"
 #include "Parser.h"
+
+#include "TData.cpp"
 
 Controller::Controller()
 {
@@ -21,6 +26,7 @@ Controller::~Controller()
 
 void Controller::run()
 {
+	vector<TData> command;
 	string input;
 	cout << "Запущено приложение Shell" << endl;
 	Parser pars;
@@ -30,7 +36,7 @@ void Controller::run()
 		//cin >> input;
 		cout << "~ $: ";
 		getline(cin,input);
-		pars.parse(input);    // парсим строчку
+		command = pars.parse(input);    // парсим строчку
 	}
 }
 

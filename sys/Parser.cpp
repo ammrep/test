@@ -19,7 +19,7 @@ Parser::Parser()
 
 }
 
-void Parser::parse(string input)
+vector<TData> Parser::parse(string input)
 {
 	vector<TData> command = getTokens(input);
 
@@ -32,6 +32,7 @@ void Parser::parse(string input)
 	}
 	else if (command.at(0).str != "exit")
 		cout << "Команда не найдена!" << endl;
+	return command;
 }
 
 vector<TData> Parser::getTokens(string input)
