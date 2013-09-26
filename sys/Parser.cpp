@@ -1,4 +1,5 @@
-﻿#include "Parser.h"
+﻿#include "TData.cpp"
+#include "Parser.h"
 #include "../apps/echo/Echo.h"
 #include "../exceptions/AppErrorException.h"
 #include <iostream>
@@ -8,12 +9,6 @@ using std::vector;
 using std::cout;
 using std::endl;
 using std::string;
-
-struct TData
-{
-	string str;    // часть команды
-	char type;    // тип - 'n' - имя файла, 'k' - ключ, 'd' - доп. ключ, 's' - строка , 'v' - переменная
-};
 
 Parser::Parser()
 {

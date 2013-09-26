@@ -9,6 +9,8 @@ using std::cout;
 using std::endl;
 using std::string;
 
+#include "TData.cpp"
+
 class Parser {
 
 public:
