@@ -20,6 +20,10 @@ int main()
 	{
 		cout << "Обнаружена ошибка: " << AppErrorException.what() << endl; 
 	}
-	system("pause");
+
+	#ifdef _WIN32
+		system("pause");
+	#endif
+		
     return 0;
 }
