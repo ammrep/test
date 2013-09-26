@@ -28,6 +28,7 @@ void Controller::run()
 	while (input != "exit")
 	{
 		//cin >> input;
+		cout << "~ $: ";
 		getline(cin,input);
 		pars.parse(input);    // парсим строчку
 	}

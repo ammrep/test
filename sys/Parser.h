@@ -19,4 +19,6 @@ public:
 	* возвратом вектора) 
 	*/
 	void parse(string);
+private:
+	vector<TData> getTokens(string);
 };
