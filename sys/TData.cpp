@@ -4,15 +4,12 @@
 #include <string>
 using std::string;
 
+enum Type {COMMAND, KEY, LONG_KEY, PARAMETER};
+
 struct TData
 {
 	string str;    // часть команды
-	char type;    /* тип - 'c' - команда
-                           'k' - ключ, 
-                           'd' - доп. ключ, 
-                           'n' - параметр, 
-                           's' - строка , 
-                           'v' - переменная */
+	Type type;
 };
 
 #endif

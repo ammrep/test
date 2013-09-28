@@ -38,33 +38,26 @@ vector<TData> Parser::parse(string input)
 vector<TData> Parser::getTokens(string input)
 {
 	vector<TData> Data;
-
     TData d;
-
     istringstream ist(input);
     string tmp;
+    
     while ( ist >> tmp )
 	{
 		//cout << tmp << endl;
 		if (Data.empty()) {
 			d.str = tmp;
-			d.type = 'c';   //Первое слово - команда
-			cout << "Тип строки: " << d.type << endl;
-			cout << "Строка: " << d.str << endl;
+			d.type = COMMAND;
 		}
 		else if (tmp[0] == '-' && tmp[1] == '-')
 		{
 			d.str = tmp.substr(2,tmp.length());
-			d.type = 'd';	// дополнительный ключ
-			cout << "Тип строки: " << d.type << endl;	// оставил для отладки
-			cout << "Строка: " << d.str << endl;
+			d.type = LONG_KEY;
 		}
 		else if (tmp[0] == '-')
 		{
 			d.str = tmp.substr(1,tmp.length());
-			d.type = 'k';	// ключ
-			cout << "Тип строки: " << d.type << endl;
-			cout << "Строка: " << d.str << endl;
+			d.type = KEY;
 		}
 		else if (tmp[0] == '\"' || tmp[0] == '\'')
 		{
@@ -74,24 +67,8 @@ vector<TData> Parser::getTokens(string input)
 				tmp.push_back(c);
 			}
 			d.str = tmp.substr(1,tmp.length() - 2);
-			d.type = 's';	// строка
-			cout << "Тип строки: " << d.type << endl;
-			cout << "Строка: " << d.str << endl;
-		}
-		else if (tmp[0] == '$')
-		{
-			d.str = tmp.substr(1,tmp.length());
-			d.type = 'v';	// переменная
-			cout << "Тип строки: " << d.type << endl;
-			cout << "Строка: " << d.str << endl;
-		}
-		else
-		{
-			d.str = tmp;
-			d.type = 's';	// строка
-			cout << "Тип строки: " << d.type << endl;
-			cout << "Строка: " << d.str << endl;
-		}
+			d.type = PARAMETER;
+		};
 		Data.push_back(d);
 	};
 	return Data;
