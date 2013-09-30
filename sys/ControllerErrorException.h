@@ -1,5 +1,5 @@
 /**
-* Класс ControllerErrorException - класс исключения для ошибок контроллера
+* РљР»Р°СЃСЃ ControllerErrorException - РєР»Р°СЃСЃ РёСЃРєР»СЋС‡РµРЅРёСЏ РґР»СЏ РѕС€РёР±РѕРє РєРѕРЅС‚СЂРѕР»Р»РµСЂР°
 */
 #include <stdexcept>
 using std::runtime_error;
