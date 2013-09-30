@@ -53,7 +53,7 @@ void Controller::run()
 				if (command[0].str == "echo")
 				{
 					Echo eh;
-					eh.run();
+					eh.run(command);
 				}
 			}
 			else

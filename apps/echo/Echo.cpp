@@ -1,4 +1,6 @@
 ﻿#include <iostream>
+#include <vector>
+#include "../../sys/TData.cpp"
 using std::cout;
 using std::endl;
 
@@ -9,7 +11,8 @@ Echo::Echo()
 
 }
 
-void Echo::run()
+void Echo::run(vector<TData> &command)
 {
-	cout << "Запущено приложение Echo" << endl;
+	//cout << "Запущено приложение Echo" << endl;
+	cout << command[1].str << endl;    // печатаем строчку
 }

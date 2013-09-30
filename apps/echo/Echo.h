@@ -3,6 +3,9 @@
 * IApp
 */
 #include "../../sys/IApp.h"    //подключаем интерфейс
+#include "../../sys/TData.cpp"
+#include<vector>
+using std::vector;
 
 class Echo : public IApp 
 {
@@ -12,6 +15,6 @@ public:
 	/**
 	* Функция run() запускает приложение Echo
 	*/
-	void run();
+	void run(vector<TData>&);
 
 };
