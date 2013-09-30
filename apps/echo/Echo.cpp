@@ -14,5 +14,8 @@ Echo::Echo()
 void Echo::run(vector<TData> &command)
 {
 	//cout << "Запущено приложение Echo" << endl;
-	cout << command[1].str << endl;    // печатаем строчку
+	for (size_t i = 0; i < command.size(); i++) 
+		if (command.at(i).type == PARAMETER)
+			cout << command.at(i).str << " ";
+	cout << endl;
 }
