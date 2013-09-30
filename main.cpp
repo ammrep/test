@@ -11,17 +11,11 @@ int main()
 {
 	try
 	{
-		try{
 	setlocale(LC_ALL,"russian");
 	//setlocale(LC_ALL,"utf-8"); 
 
 	Controller contr;
 	contr.run();
-		}
-		catch (ControllerErrorException &ControllerErrorException)
-		{
-			cout << "Обнаружена ошибка: " << ControllerErrorException.what() << endl; 
-		}
 	}
 	catch (AppErrorException &AppErrorException)
 	{
