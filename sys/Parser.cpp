@@ -25,11 +25,11 @@ vector<TData> Parser::parse(string input)
 
 	if (command.at(0).str == "error")
 		throw AppErrorException();
-	if (command.at(0).str == "echo")
+	/*if (command.at(0).str == "echo")
 	{
 		Echo echo;
 		echo.run();
-	}
+	}*/
 	//else if (command.at(0).str != "exit")
 	//	cout << "Команда не найдена!" << endl;
 	return command;
