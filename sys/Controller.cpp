@@ -11,6 +11,7 @@ using std::vector;
 
 #include <algorithm>
 using std::binary_search;
+using std::sort;
 
 #include "Controller.h"
 #include "Parser.h"
@@ -24,6 +25,7 @@ Controller::Controller()
 	cout << "Создан экземпляр контроллера" << endl;
 	this->app_names.push_back("echo");    // регестрируем имя приложения(команды)
 	this->app_names.push_back("exit"); 
+	sort(this->app_names.begin(), this->app_names.end());
 }
 
 Controller::~Controller()
