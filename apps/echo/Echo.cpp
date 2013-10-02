@@ -15,7 +15,7 @@ void Echo::run(vector<TData> &command)
 {
 	//cout << "Запущено приложение Echo" << endl;
 	for (size_t i = 0; i < command.size(); i++) 
-		if (command.at(i).type == PARAMETER)
+		if (command.at(i).type == QPARAMETER)
 			cout << command.at(i).str << " ";
 	cout << endl;
 }
