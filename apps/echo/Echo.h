@@ -15,7 +15,8 @@ using std::vector;
 class Echo : public IApp 
 {
 public:
-	Echo(vector<TData> command);
+	Echo();
+	~Echo();
 	/**
 	* Функция run() запускает приложение Echo
 	*/

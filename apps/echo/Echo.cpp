@@ -9,10 +9,7 @@ using std::vector;
 #include "../../sys/TData.cpp"
 #include "../../sys/AppErrorException.h"
 
-Echo::Echo(vector<TData> command)
-{ 
-	this->run(command);
-}
+Echo::Echo() {}
 
 void Echo::run(vector<TData> command)
 {

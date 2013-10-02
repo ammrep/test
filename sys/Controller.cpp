@@ -56,7 +56,8 @@ void Controller::run()
 				     << " найдено в списке регистрации. Запускаю!" << endl;
 				if (command.at(0).str == "echo")
 				{
-					Echo run(command);
+					Echo echo;
+					echo.run(command);
 				}
 			}
 			else if(!command.empty())
