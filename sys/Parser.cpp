@@ -23,8 +23,6 @@ vector<TData> Parser::parse(string input)
 {
 	vector<TData> command = getTokens(input);
 
-	if (command.at(0).str == "error")
-		throw AppErrorException();
 	return command;
 }
 
@@ -35,6 +33,9 @@ vector<TData> Parser::getTokens(string input)
     istringstream ist(input);
     string tmp;
     
+    if (input.empty())
+    	return Data;
+
     while ( ist >> tmp )
 	{
 		//cout << tmp << endl;
@@ -42,24 +43,24 @@ vector<TData> Parser::getTokens(string input)
 			d.str = tmp;
 			d.type = COMMAND;
 		}
-		else if (tmp[0] == '-' && tmp[1] == '-')
+		else if (tmp.at(0) == '-' && tmp.at(1) == '-')
 		{
 			d.str = tmp.substr(2,tmp.length());
 			d.type = LONG_KEY;
 		}
-		else if (tmp[0] == '-')
+		else if (tmp.at(0) == '-')
 		{
 			d.type = KEY;
 			// Для обработки серии ключей вида -lar
 			for (size_t i = 1; i < tmp.length() - 1; i++) {
-				d.str = tmp[i];
+				d.str = tmp.at(i);
 				Data.push_back(d);
 			}
 			d.str = *tmp.end();	// чтобы не пропустить последний ключ в серии
 		}
-		else if (tmp[0] == '\"' || tmp[0] == '\'')
+		else if (tmp.at(0) == '\"' || tmp.at(0) == '\'')
 		{
-			while (*(tmp.end()-1) != tmp[0]) {
+			while (*(tmp.end()-1) != tmp.at(0)) {
 				char c;
 				ist.get(c);
 				tmp.push_back(c);
