@@ -52,11 +52,11 @@ void Controller::run()
 			if (!command.empty() && binary_search(this->app_names.begin(), 
 			                        this->app_names.end(), command.at(0).str))
 			{
-				cout << "Приложение " << command[0].str << " найдено в списке регистрации. Запускаю!" << endl;
+				cout << "Приложение " << command.at(0).str 
+				     << " найдено в списке регистрации. Запускаю!" << endl;
 				if (command.at(0).str == "echo")
 				{
-					Echo eh;
-					eh.run(command);
+					Echo run(command);
 				}
 			}
 			else if(!command.empty())

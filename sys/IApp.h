@@ -1,9 +1,6 @@
-﻿#include "TData.cpp"
-#include<vector>
-
-/**
+﻿/**
 * Класс IApp - интерфейс для любого приложения шелла
-*/
+**/
 
 class IApp {
 public:
@@ -11,4 +8,8 @@ public:
 	* Функция run() запускает приложение
 	*/
 	void run();
+	void getHelp();
+private:
+	void checkKeys();
+	void checkParameters();
 };

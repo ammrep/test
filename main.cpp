@@ -3,7 +3,6 @@ using std::cout;
 using std::endl;
 
 #include "sys/Controller.h"
-#include "sys/AppErrorException.h"
 #include "sys/ControllerErrorException.h"
 
 
@@ -17,9 +16,9 @@ int main()
 	Controller contr;
 	contr.run();
 	}
-	catch (AppErrorException &AppErrorException)
+	catch (ControllerErrorException &ControllerErrorException)
 	{
-		cout << "Обнаружена ошибка: " << AppErrorException.what() << endl; 
+		cout << "Обнаружена ошибка: " << ControllerErrorException.what() << endl; 
 	}
 
 	#ifdef _WIN32

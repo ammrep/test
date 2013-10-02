@@ -1,3 +1,16 @@
-﻿#include "IApp.h"
+﻿#include <iostream>
+using std::cout;
+using std::endl;
 
-void IApp::run(){}
+#include "IApp.h"
+
+void IApp::run() {}
+
+void IApp::checkKeys() {}
+
+void IApp::checkParameters() {}
+
+void IApp::getHelp()
+{
+	cout << "Здесь могла быть справка" << endl;
+}

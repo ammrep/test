@@ -2,19 +2,30 @@
 * Класс Echo - основной класс приложения Echo - реализация интерфейса
 * IApp
 */
+
+#ifndef ECHO_H
+#define ECHO_H
+
+#include <vector>
+using std::vector;
+
 #include "../../sys/IApp.h"    //подключаем интерфейс
 #include "../../sys/TData.cpp"
-#include<vector>
-using std::vector;
 
 class Echo : public IApp 
 {
 public:
-	Echo();
-
+	Echo(vector<TData> command);
 	/**
 	* Функция run() запускает приложение Echo
 	*/
-	void run(vector<TData>&);
-
+	void run(vector<TData>);
+private:
+	void setKeys(vector<TData>);
+	bool checkParameters(vector<TData>);
+	bool newline;
+	bool reverse;
+	bool help;
 };
+
+#endif
