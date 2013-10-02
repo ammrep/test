@@ -1,7 +1,7 @@
 root_apps_dir := apps
 apps_subdirs := echo
 root_sys_dir := sys
-CFLAGS = -Wall -Wextra
+CFLAGS = -Wall -Wextra -pedantic -Wunreachable-code -Wold-style-cast -Winit-self
 LFLAGS = -s -pipe
 
 relative_apps_dirs := $(addprefix ../$(root_apps_dir)/, $(apps_subdirs))
