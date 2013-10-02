@@ -5,9 +5,6 @@ using std::endl;
 #include <vector>
 using std::vector;
 
-#include <stdexcept>
-using std::invalid_argument;
-
 #include "Echo.h"
 #include "../../sys/TData.cpp"
 #include "../../sys/AppErrorException.h"
@@ -19,30 +16,42 @@ Echo::Echo(vector<TData> command)
 
 void Echo::run(vector<TData> command)
 {
+	// Если у комманды нет параметров
 	if (!checkParameters(command)) {
 		getHelp();
 		return;
 	}
+
 	setKeys(command); 		// Обработка ключей, входящих в комманду
+
+	// Если в команде задан ключ -h
 	if (help) {
 		getHelp();
 		return;
 	}
 
+	// Обработка ключа, задающего разделитель между параметрами
 	char sep = (newline ? '\n' : ' ');
 
+	// Вывод
 	bool isThereOutput = false;
-	for (size_t i = 0; i < command.size(); i++) 
-		if (command.at(i).type == QPARAMETER) {
+	for (size_t i = 1; i < command.size(); i++) 
+		if (command.at(i).type == PARAMETER) {
 			isThereOutput = true;
 			cout << command.at(i).str << sep;
 		}
+
 	if (isThereOutput && !newline)
 		cout << endl;
 }
 
+/**
+Присваивает true булевым переменным, для которых в комманде
+есть соответствующие ключи
+*/
 void Echo::setKeys(vector<TData> command)
 {
+	help = newline = reverse = false;
 	for (size_t i = 1; i < command.size(); i++)
 		if (command.at(i).type == KEY || command.at(i).type == LONG_KEY) {
 			string temp = command.at(i).str;
@@ -55,15 +64,13 @@ void Echo::setKeys(vector<TData> command)
 		}
 }
 
+/**
+Проверяет, корректно ли заданы параметры в команде
+*/
 bool Echo::checkParameters(vector<TData> command)
 {
-	bool isThereQParam = false;
-	for (int i = 1; i < command.size(); i++) { 
-		if (command.at(i).type == PARAMETER) {
-			cout << "Неверный параметр: " << command.at(i).str << endl;
-			return false;
-		}
-		else if (command.at(i).type == QPARAMETER)
-			isThereQParam = true;
-	}
+	for (size_t i = 1; i < command.size(); i++) 
+		if (command.at(i).type == PARAMETER)
+			return true;
+	return false;
 }

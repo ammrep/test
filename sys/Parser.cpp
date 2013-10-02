@@ -66,9 +66,9 @@ vector<TData> Parser::getTokens(string input)
 				tmp.push_back(c);
 			}
 			d.str = tmp.substr(1,tmp.length() - 2);
-			d.type = QPARAMETER;
+			d.type = PARAMETER;
 		}
-		else
+		else 
 		{
 			d.str = tmp;
 			d.type = PARAMETER;
