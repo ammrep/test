@@ -6,9 +6,13 @@
 * класс вызывает все остальные классы, и нужно постараться, чтобы
 * все связи происходили через него
 */
+#ifndef CONTROLLER_H
+#define CONTROLLER_H
+
 #include <vector>
 using std::vector;
-#include <sstream>
+
+#include <string>
 using std::string;
 
 class Controller 
@@ -24,3 +28,5 @@ public:
 private:
 	vector<string> app_names;	// имена всех приложений
 };
+
+#endif

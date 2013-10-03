@@ -5,6 +5,9 @@ using std::endl;
 #include <vector>
 using std::vector;
 
+#include <fstream>
+using std::ifstream;
+
 #include <algorithm>
 using std::reverse;
 
@@ -21,8 +24,8 @@ void Echo::run(vector<TData> command)
 
 	// Если у комманды нет параметров
 	if (!checkParameters(command)) {
-		getHelp();
-		return;
+		cout << "Программе не передано параметров" << endl;
+		help = true;
 	}
 	
 	// Если в команде задан ключ -h
@@ -79,4 +82,17 @@ bool Echo::checkParameters(vector<TData> command)
 		if (command.at(i).type == PARAMETER)
 			return true;
 	return false;
+}
+
+void Echo::getHelp()
+{
+	const char* filename = "apps/echo/help";
+	char c;
+	ifstream fin(filename);
+
+	cout << "\n\n";
+	while (fin.get(c)) 
+		cout << c;
+	if (c != '\n')
+		cout << "\n\nКонец справки\n\n";
 }

@@ -9,6 +9,9 @@
 #include <vector>
 using std::vector;
 
+#include <string>
+using std::string;
+
 #include "../../sys/IApp.h"    //подключаем интерфейс
 #include "../../sys/TData.cpp"
 
@@ -20,6 +23,7 @@ public:
 	* Функция run() запускает приложение Echo
 	*/
 	void run(vector<TData>);
+	void getHelp();
 private:
 	void setKeys(vector<TData>);
 	bool checkParameters(vector<TData>);

@@ -17,23 +17,21 @@ using std::sort;
 #include "Parser.h"
 #include "ControllerErrorException.h"
 #include "AppErrorException.h"
-#include "../apps/echo/Echo.h"
-
+#include "../apps/apps.h"
 #include "TData.cpp"
 
 Controller::Controller()
 {
-	cout << "Создан экземпляр контроллера" << endl;
-	this->app_names.push_back("echo");    // регестрируем имя приложения(команды)
+	// cout << "Создан экземпляр контроллера" << endl;
+	this->app_names.push_back("echo");    // регистрируем имя приложения(команды)
 	this->app_names.push_back("exit"); 
 	sort(this->app_names.begin(), this->app_names.end());
 }
 
 Controller::~Controller()
 {
-	cout << "Удалён экземпляр контроллера" << endl;
+	// cout << "Удалён экземпляр контроллера" << endl;
 }
-
 
 void Controller::run()
 {
@@ -49,11 +47,10 @@ void Controller::run()
 			getline(cin,input);
 			command = pars.parse(input);    // парсим строчку
 
-			string appName = command.at(0).str;
 			if (!command.empty() && binary_search(this->app_names.begin(), 
-			                        this->app_names.end(), appName))
+			                        this->app_names.end(), command.at(0).str))
 			{
-				if (appName == "echo")
+				if (command.at(0).str == "echo")
 				{
 					Echo echo;
 					echo.run(command);

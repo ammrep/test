@@ -2,6 +2,9 @@
 * Класс IApp - интерфейс для любого приложения шелла
 **/
 
+#ifndef IAPP_H
+#define IAPP_H
+
 class IApp {
 public:
 	/**
@@ -12,7 +15,7 @@ public:
 	/**
 	* Вывод справки для программы
 	*/
-	void getHelp(); 
+	void getHelp();
 private:
 	/**
 	* Проверяет ключи в команде
@@ -25,3 +28,5 @@ private:
 	*/
 	void checkParameters();
 };
+
+#endif
