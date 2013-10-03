@@ -13,6 +13,7 @@ Echo - вывод строки/строк
 		Вывод справочного сообщения
 
 Примеры:
+
 	~ $: echo -h
 		Выводит справку
 
@@ -27,4 +28,4 @@ Echo - вывод строки/строк
 				first
 
 	- $: echo -r 'and second' 'first'
-		Вывод:	first and second
+		Вывод:	first and second	

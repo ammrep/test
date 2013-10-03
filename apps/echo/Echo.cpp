@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 using std::cout;
+using std::cerr;
 using std::endl;
 
 #include <vector>
@@ -89,7 +90,11 @@ void Echo::getHelp()
 	const char* filename = "apps/echo/help";
 	char c;
 	ifstream fin(filename);
-
+	if (!fin) 
+	{
+		cerr << "Не удалось открыть файл справки" << endl;
+		return ;
+	}
 	cout << "\n\n";
 	while (fin.get(c)) 
 		cout << c;
