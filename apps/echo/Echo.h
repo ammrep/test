@@ -16,7 +16,6 @@ class Echo : public IApp
 {
 public:
 	Echo();
-	~Echo();
 	/**
 	* Функция run() запускает приложение Echo
 	*/
@@ -24,8 +23,8 @@ public:
 private:
 	void setKeys(vector<TData>);
 	bool checkParameters(vector<TData>);
-	bool newline;
-	bool reverse;
+	bool newlines;
+	bool reverseOutput;
 	bool help;
 };
 

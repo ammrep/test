@@ -5,6 +5,9 @@ using std::endl;
 #include <vector>
 using std::vector;
 
+#include <algorithm>
+using std::reverse;
+
 #include "Echo.h"
 #include "../../sys/TData.cpp"
 #include "../../sys/AppErrorException.h"
@@ -28,8 +31,11 @@ void Echo::run(vector<TData> command)
 	}
 
 	// Обработка ключа, задающего разделитель между параметрами
-	char sep = (newline ? '\n' : ' ');
+	char sep = (newlines ? '\n' : ' ');
 
+	if (reverseOutput)
+		reverse(command.begin()+1, command.end());
+	
 	// Вывод
 	bool isThereOutput = false;
 	for (size_t i = 1; i < command.size(); i++) 
@@ -38,7 +44,7 @@ void Echo::run(vector<TData> command)
 			cout << command.at(i).str << sep;
 		}
 
-	if (isThereOutput && !newline)
+	if (isThereOutput && !newlines)
 		cout << endl;
 }
 
@@ -48,16 +54,16 @@ void Echo::run(vector<TData> command)
 */
 void Echo::setKeys(vector<TData> command)
 {
-	help = newline = reverse = false;
+	help = newlines = reverseOutput = false;
 	for (size_t i = 1; i < command.size(); i++)
 		if (command.at(i).type == KEY || command.at(i).type == LONG_KEY) {
 			string temp = command.at(i).str;
 			if (temp == "h" || temp == "help")
 				help = true;
 			else if (temp == "n" || temp == "new-line")
-				newline = true;
+				newlines = true;
 			else if (temp == "r" || temp == "reverse")
-				reverse = true;
+				reverseOutput = true;
 		}
 }
 
