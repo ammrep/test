@@ -16,14 +16,15 @@ Echo::Echo() {}
 
 void Echo::run(vector<TData> command)
 {
+
+	setKeys(command); 		// Обработка ключей, входящих в комманду
+
 	// Если у комманды нет параметров
 	if (!checkParameters(command)) {
 		getHelp();
 		return;
 	}
-
-	setKeys(command); 		// Обработка ключей, входящих в комманду
-
+	
 	// Если в команде задан ключ -h
 	if (help) {
 		getHelp();
@@ -64,6 +65,8 @@ void Echo::setKeys(vector<TData> command)
 				newlines = true;
 			else if (temp == "r" || temp == "reverse")
 				reverseOutput = true;
+			else
+				throw InvalidKey(command.at(i).str);
 		}
 }
 

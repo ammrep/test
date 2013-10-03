@@ -4,10 +4,18 @@
 */
 #include <stdexcept>
 using std::runtime_error;
+using std::invalid_argument;
 
 class AppErrorException : public runtime_error
 {
 public:
 	AppErrorException()
 		: runtime_error("Ошибка приложения ") {}
+};
+
+class InvalidKey : public invalid_argument
+{
+public:
+	InvalidKey(string key) 
+		: invalid_argument(key) {}
 };

@@ -16,6 +16,7 @@ using std::sort;
 #include "Controller.h"
 #include "Parser.h"
 #include "ControllerErrorException.h"
+#include "AppErrorException.h"
 #include "../apps/echo/Echo.h"
 
 #include "TData.cpp"
@@ -44,23 +45,21 @@ void Controller::run()
 	while (input != "exit")
 	{		
 		try {
-			//cin >> input;
 			cout << "~ $: ";
 			getline(cin,input);
 			command = pars.parse(input);    // парсим строчку
 
+			string appName = command.at(0).str;
 			if (!command.empty() && binary_search(this->app_names.begin(), 
-			                        this->app_names.end(), command.at(0).str))
+			                        this->app_names.end(), appName))
 			{
-				cout << "Приложение " << command.at(0).str 
-				     << " найдено в списке регистрации. Запускаю!" << endl;
-				if (command.at(0).str == "echo")
+				if (appName == "echo")
 				{
 					Echo echo;
 					echo.run(command);
 				}
 			}
-			else if(!command.empty())
+			else if (!command.empty())
 			{
 				throw ControllerErrorException("Такое приложение не существует");
 			}
@@ -68,6 +67,10 @@ void Controller::run()
 		catch (ControllerErrorException &ControllerErrorException)
 		{
 			cout << "Обнаружена ошибка: " << ControllerErrorException.what() << endl; 
+		}
+		catch (InvalidKey &ik)
+		{
+			cout << "Некорректный ключ: " << ik.what() << endl;
 		}
 	}
 }
