@@ -9,9 +9,6 @@
 #include <vector>
 using std::vector;
 
-#include <string>
-using std::string;
-
 #include "../../sys/IApp.h"    //подключаем интерфейс
 #include "../../sys/TData.cpp"
 

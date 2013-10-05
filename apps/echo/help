@@ -25,7 +25,7 @@ Echo - вывод строки/строк
 
 	~ $: echo -n "first" "second" --reverse
 		Вывод:	second
-				first
+		        first
 
 	- $: echo -r 'and second' 'first'
 		Вывод:	first and second	
