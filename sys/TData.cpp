@@ -4,7 +4,10 @@
 #include <string>
 using std::string;
 
-enum Type {COMMAND, KEY, LONG_KEY, PARAMETER};
+enum Type {COMMAND,
+           KEY,
+           LONG_KEY,
+           PARAMETER};
 
 struct TData
 {

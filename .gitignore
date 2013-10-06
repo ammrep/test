@@ -4,3 +4,9 @@ ammrep_test.vcxproj.user
 /Debug
 /amm_test/
 /ipch/
+
+main.sublime-project
+main.sublime-workspace
+shell
+obj/
+

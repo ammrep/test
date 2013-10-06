@@ -1,3 +1,19 @@
-﻿#include "IApp.h"
+﻿#include <iostream>
+using std::cout;
+using std::endl;
 
-void IApp::run(){}
+#include <fstream>
+using std::ifstream;
+
+#include <string>
+using std::string;
+
+#include "IApp.h"
+
+void IApp::run() {}
+
+void IApp::checkKeys() {}
+
+void IApp::checkParameters() {}
+
+void IApp::getHelp() {}

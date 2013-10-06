@@ -4,6 +4,9 @@
 * упорядоченные данные
 */
 
+#ifndef PARSER_H
+#define PARSER_H
+
 #include <string>
 using std::string;
 
@@ -25,3 +28,5 @@ public:
 private:
 	vector<TData> getTokens(string);
 };
+
+#endif
