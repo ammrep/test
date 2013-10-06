@@ -25,6 +25,7 @@ Controller::Controller()
 	// cout << "Создан экземпляр контроллера" << endl;
 	this->app_names.push_back("echo");    // регистрируем имя приложения(команды)
 	this->app_names.push_back("exit"); 
+	this->app_names.push_back("cd");  
 	sort(this->app_names.begin(), this->app_names.end());
 }
 
@@ -54,6 +55,11 @@ void Controller::run()
 				{
 					Echo echo;
 					echo.run(command);
+				}
+				if (command.at(0).str == "cd")
+				{
+					Cd cd;
+					cd.run(command);
 				}
 			}
 			else if (!command.empty())

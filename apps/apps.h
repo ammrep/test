@@ -2,5 +2,6 @@
 #define APPS_H
 
 #include "echo/Echo.h"
+#include "cd/Cd.h";
 
 #endif
