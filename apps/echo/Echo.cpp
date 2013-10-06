@@ -87,7 +87,10 @@ bool Echo::checkParameters(vector<TData> command)
 
 void Echo::getHelp()
 {
-	const char* filename = "apps/echo/help";
+	const char* filename = "apps/echo/help";	// не работает на винде
+	#ifdef _WIN32
+		filename = "../apps/echo/help";
+	#endif
 	char c;
 	ifstream fin(filename);
 	if (!fin) 
